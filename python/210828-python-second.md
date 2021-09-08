@@ -24,7 +24,7 @@
 # v1 = (1, 2, 3), v2 = (4, 5, 6) 벡터 2개 생성하기.
 ##v1 = np.array((1,2,3))
 ##v2 = np.array((4,5,6))
-type(v1), type(v2)
+## type(v1), type(v2)
 # dot product
 ##v1 @ v2 # 1x4 + 2x5 + 3x6 = 32
 # 위에서 생성한 data에 mask를 적용해본다.
