@@ -147,3 +147,59 @@ except ValueError:
 
 except IndexError:
     num_list[-1]
+
+# 연습문제
+>간단한 ATM기 시스템을 만들어보겠습니다.
+
+>>사용자로부터 메뉴를 입력받습니다.
+1. 입금
+2. 출금
+3. 잔액확인
+4. 종료
+
+>입력받은 메뉴에 따라 계좌잔액에 입금과 출금을 적용하고 잔액을 출력해봅시다.
+종료메뉴는 while 문을 빠져나오도록 프로그램을 종료시킵니다.
+
+# 연습문제 
+# 사용자 계좌 초기값
+balance = 0
+
+while True:
+    print('''
+    어서오세요. SSAC 뱅크 입니다.
+    원하시는 메뉴를 선택해주세요.
+    
+    1. 입금
+    2. 출금
+    3. 잔액 확인
+    4. 종료
+    ''')
+
+    menu = int(input('메뉴를 입력해주세요.:'))
+    
+    if menu == 1 :
+        saving = int(input('입금 할 금액을 입력해주세요.:'))
+        balance += saving
+        print(f'현재 잔액은 {balance}원 입니다.')
+        
+    elif menu == 2 :
+        withdraw = int(input('출금 할 금액을 입력해주세요.:')) 
+        if balance < withdraw : 
+            print(f'잔액이 부족합니다.')
+            continue
+        else:
+            balance -= withdraw
+            print(f'{withdraw}원이 출금되었습니다.')
+            
+    elif menu == 3:
+        print(f'{balance}원의 잔액이 남아있습니다.')
+        
+    elif menu == 4:
+        break
+        
+    if not menu:
+        break
+        
+print('서비스가 종료되었습니다.')
+
+
